@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Navbar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background-color: #222;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      z-index: 1000;
+    }
+
+
+    #veg h2 {
+      font-size: 30px;
+      color: palevioletred;
+
+    }
+
+    #nonveg h2 {
+      font-size: 30px;
+      color: palevioletred;
+
+    }
+
+    .nav-links {
+      display: none;
+      /* hidden by default, shown by JS when toggled */
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #333;
+      border-radius: 8px;
+      padding: 10px;
+      gap: 10px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+
+    .nav-links a:hover {
+      background-color: #444;
+      border-radius: 4px;
+    }
+
+    .hamburger {
+      font-size: 25px;
+      cursor: pointer;
+      display: block;
+      color: white;
+      margin-right: 30px;
+    }
+
+    .logo img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .footer-content {
+      margin: 30px;
+    }
+
+
+
+    /* Mobile View: Scrollable navbar visible, hamburger hidden */
+    @media (max-width: 768px) {
+      .menu-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+
+      nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        justify-content: flex-start;
+      }
+
+      .hamburger {
+        display: none;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: none;
+        padding: 0;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        display: inline-block;
+        padding: 0;
+        margin-right: 15px;
+      }
+
+      nav::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    section {
+      padding: 80px 20px 40px;
+      margin-top: 60px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .menu-item {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 10px;
+      flex-direction: column;
+    }
+
+    .menu-image img {
+      width: 50%;
+      height: 50%;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 30px;
+    }
+
+    .menu-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+
+    .menu-item p {
+      font-size: 30px;
+      margin-bottom: 200px;
+
+
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 200px;
+      border: none;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo"><img src="Adobe Express - file.png" alt="logo"></div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#veg" onclick="hideMenu()">3D Letter</a>
+      <a href="#nonveg" onclick="hideMenu()">3D Sign Board</a>
+      <a href="#beverages" onclick="hideMenu()">🥤 Beverages</a>
+      <a href="#bread" onclick="hideMenu()">🍞 Bread</a>
+    </div>
+  </nav>
+
+  <!-- Content Sections -->
+  <section id="veg">
+    <h2>3D Letter</h2>
+    <div class="menu-item">
+      <div class="menu-image">
+        <img src="/3d letter.jpg" alt="3D Letter" />
+        <p>This 3D text design of the word “LISTEN” features bold, uppercase letters with a cream surface, green
+          outlines, and realistic shadows. It’s visually striking, fully editable in PSD format, and ideal for
+          impactful, professional branding or motivational content.</p>
+      </div>
+      <div class="menu-image">
+        <img src="/3d letter 2.jpg" alt="3D Letter" />
+        <p>The MERDEKA text features a bold 3D design with vibrant red letters outlined in gold. The arched layout adds
+          energy and celebration, ideal for national events or festive themes. It’s fully editable in PSD format for
+          personalized branding.</p>
+      </div>
+      <div class="menu-image">
+        <img src="/3d2.webp" alt="3D Letter" />
+        <p>This 3D text design features bold, uppercase letters with a cream surface and green outlines.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="nonveg">
+    <h2>3D Sign Board</h2>
+    <div class="menu-item">
+      <div class="menu-image">
+        <img src="/3d sign bd.jpg" alt="3D Sign" />
+        <p>This BAR sign features bold black text inside a glowing yellow frame, set against glossy white brick tiles.
+          The vibrant neon-like glow adds a stylish and modern vibe, making it perfect for bars, cafés, or nightlife
+          promotional designs.</p>
+      </div>
+      <div class="menu-image">
+        <img src="/3d sign bd2.jpg" alt="3D Sign" />
+        <p>This glowing PARKING sign features bold white letters on a bright blue background, framed with a yellow
+          border. Its illuminated design ensures visibility at night, making it perfect for guiding drivers to available
+          parking spaces in urban or commercial areas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <h2>Contact Us</h2>
+      <p><strong>Phone:</strong> +91 9065044801</p>
+      <p><strong>Email:</strong> contact@yourwebsite.com</p>
+      <p><strong>Office:</strong>Kankarbagh Colony More</p>
+      <iframe src="https://www.google.com/maps?q=Vivekanand+Nagar+Patna+Bihar&output=embed" allowfullscreen></iframe>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function hideMenu() {
+      const nav = document.getElementById('navLinks');
+      if (window.innerWidth > 768) {
+        nav.style.display = 'none';
+      }
+    }
+
+    // Hide menu on resize (for desktop hamburger reset)
+    window.addEventListener('resize', () => {
+      const nav = document.getElementById('navLinks');
+      if (window.innerWidth <= 768) {
+        nav.style.display = 'flex';
+      } else {
+        nav.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+
+</html>
